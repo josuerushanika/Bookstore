@@ -4,18 +4,12 @@ const Form = () => (
     <>
     <form action='GET'>
        Book Title:
-       <input type="text"/>
-       {' '}
-       <br />
-       {' '}
+       <input type="text" placeholder="title"/>
        <br />
        Author:
-       <input type="text"/>
-       {' '}
+       <input type="text" placeholder="Author"/>
        <br />
        <button type="submit">Add</button>
-       {' '}
-       <br />
     </form>
     </>
 

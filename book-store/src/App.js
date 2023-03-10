@@ -1,6 +1,7 @@
 import React from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Navbar from 'components/Navbar';
+import { Routes, Route} from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 // page
 import Books from './pages/Books';
 import Categories from './pages/Categories';
@@ -8,8 +9,7 @@ import Categories from './pages/Categories';
 
 function App() {
   return (
-    <BrowserRouter>
-
+    <div>
      <Navbar/>
       <main>
         <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
         </Routes>
       </main>
-    </BrowserRouter>
+      </div>
   );
 }
 
