@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = () => (
   <>
-    <form action="GET">
+    <form>
       Book Title:
       <input type="text" placeholder="title" />
       <br />
