@@ -1,23 +1,23 @@
-import React from 'react'
-import Book  from '../components/Book'
-import Form from '../components/Form'
+import React from 'react';
+import Book from '../components/Book';
+import Form from '../components/Form';
 
-const book= [
-    {id:1, title:'My first Book', author:'Henry potter'}
-]
+const books = [
+  { id: 1, title: 'My first Book', author: 'Henry potter' },
+  { id: 2, title: 'Tech and Innovation', author: 'Mark Sorrez' },
+  { id: 3, title: 'Coding Camp', author: 'Gruy Frank' },
+  { id: 4, title: 'Network Principle', author: 'Mone Iyono' },
+];
 
-const Books = () => {
-  return (
-    <div>
+const Books = () => (
+  <div>
     <ul>
-      <Book title="Tech and Innovation" author="Mark Sorrez" />
-      <Book title="Coding Camp" author="Gruy Frank" />
-      <Book title="Network Principle" author="Mone Iyono" />
+      {books.map((book) => (
+        <Book key={book.id} title={book.title} author={book.author} />
+      ))}
     </ul>
     <Form />
-    </div>
+  </div>
+);
 
-  )
-}
-
-export default Books
+export default Books;
