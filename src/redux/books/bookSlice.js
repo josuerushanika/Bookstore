@@ -1,24 +1,31 @@
-const bookList = [
-  {
-    item_id: 'item1',
-    title: 'The Magician',
-    author: 'Alain Quote',
-    category: 'Roman'
-  },
+import { createSlice } from '@reduxjs/toolkit';
+import bookList from '../../bookList';
 
-  {
-    item_id: 'item2',
-    title: 'Second War',
-    author: 'Aime Loqw',
-    category: 'History',
-  },
+const initialState = {
+  bookList,
+};
 
-  {
-    item_id: 'item3',
-    title: 'Network Principile',
-    author: 'Josue Rushanika',
-    category: 'Technology',
-  },
-];
+const bookSlice = createSlice({
+  name: 'book',
+  initialState,
+  reducers: {
+    addBook: (state, action) => {
+      const { title, author } = action.payload;
 
-export default bookList;
+      const newBook = {
+        item_id: `item${state.bookList.length + 1}`,
+        title,
+        author,
+      };
+      // eslint-disable-next-line no-param-reassign
+      state.bookList = [...state.bookList, newBook];
+    },
+    removeBook: (state, action) => {
+      const bookId = action.payload;
+      return {
+        ...state,
+        bookList: state.bookList.filter((book) => book.item_id !== bookId),
+      };
+    },
+  },
+});
