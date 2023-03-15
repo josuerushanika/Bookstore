@@ -1,13 +1,12 @@
+
 .form-container {
-    /* stylelint-disable-next-line indentation */
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-/* stylelint-disable-next-line no-eol-whitespace */
-.form { 
-    display: flex;
-    gap: 10px;
-    width: 80%;
+.form {
+  display: flex;
+  gap: 10px;
+  width: 80%;
 }
