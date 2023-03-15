@@ -15,9 +15,14 @@ const Form = () => {
   };
 
   return (
-    <form>
-      Book Title:
-      <input type="text" placeholder="title" />
+    <form onSubmit={handleAddBook}>
+      <h3>Book Title:</h3>
+      <input
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        type="text"
+        placeholder="title"
+      />
       <br />
       Author:
       <input type="text" placeholder="Author" />
