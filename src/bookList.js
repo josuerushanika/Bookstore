@@ -1,23 +1,21 @@
 const bookList = [
   {
     item_id: 'item1',
-    title: 'The Magician',
-    author: 'Alain Quote',
-    category: 'Roman',
+    title: 'The Great Gatsby',
+    author: 'John Smith',
+    category: 'Fiction',
   },
-
   {
     item_id: 'item2',
-    title: 'Second War',
-    author: 'Aime Loqw',
-    category: 'History',
+    title: 'Anna Karenina',
+    author: 'Leo Tolstoy',
+    category: 'Fiction',
   },
-
   {
     item_id: 'item3',
-    title: 'Network Principile',
-    author: 'Josue Rushanika',
-    category: 'Technology',
+    title: 'The Selfish Gene',
+    author: 'Richard Dawkins',
+    category: 'Nonfiction',
   },
 ];
 
