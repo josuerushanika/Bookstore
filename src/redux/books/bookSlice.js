@@ -1,6 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import bookList from '../../bookList';
 
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q8kjbUtPhPhbIN9tNQtv';
+
+export const postBook = createAsyncThunk('books/postBook',
+  async (bookData, thunkApi) => {
+    try {
+      const resData = await axios.post(`${url}`, bookData);
+      return resData.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error?.data?.message || 'something went wrong');
+    }
+  });
+
+  
 const initialState = {
   bookList,
 };
