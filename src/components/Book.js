@@ -8,6 +8,12 @@ const Book = ({
 }) => {
   // const { title, author } = book;
   const dispatch = useDispatch();
+
+  const removeBookHandler = (event) => {
+    const {id} = event.target.dataset;
+    dispatch(booksActions.removeBook(id))
+    dispatch(deleteBook(id));
+  }
   return (
     <div>
       <p>{category}</p>
