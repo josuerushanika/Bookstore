@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/bookSlice';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook, postBook } from '../redux/books/bookSlice';
 import '../styles/Form.css';
 
 const Form = () => {
@@ -10,7 +11,15 @@ const Form = () => {
 
   const handleAddBook = (e) => {
     e.preventDefault();
-    dispatch(addBook({ title, author }));
+    if (!title.trim() || !author.trim()) return;
+    const bookData = {
+      item_id: uuidv4(),
+      title,
+      author,
+      category: 'Non-fiction',
+    };
+    dispatch(addBook(bookData));
+    dispatch(postBook(bookData));
     setTitle('');
     setAuthor('');
   };
@@ -36,6 +45,7 @@ const Form = () => {
           required
         />
         <br />
+
         <button type="submit">Add</button>
       </form>
     </div>
