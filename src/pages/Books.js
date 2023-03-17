@@ -5,7 +5,6 @@ import Book from '../components/Book';
 import Form from '../components/Form';
 
 const Books = () => {
-  // const { bookList } = useSelector((state) => state.books);
   const { books, isLoading } = useSelector((state) => state.books);
   const dispatch = useDispatch();
 

@@ -1,7 +1,5 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-// import bookList from '../../bookList';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q8kjbUtPhPhbIN9tNQtv';
 

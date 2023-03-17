@@ -6,7 +6,6 @@ import { booksActions, deleteBook } from '../redux/books/bookSlice';
 const Book = ({
   id, title, author,
 }) => {
-  // const { title, author } = book;
   const dispatch = useDispatch();
 
   const removeBookHandler = (event) => {
@@ -16,7 +15,6 @@ const Book = ({
   };
   return (
     <div>
-      {/* <p>{category}</p> */}
       <h3>{title}</h3>
       <p>{author}</p>
       <button type="button" data-id={id} onClick={removeBookHandler}>Remove</button>
@@ -28,7 +26,6 @@ Book.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  // category: PropTypes.string.isRequired,
 };
 
 export default Book;
