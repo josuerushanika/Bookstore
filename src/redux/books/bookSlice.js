@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import bookList from '../../bookList';
+// import bookList from '../../bookList';
 
 const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q8kjbUtPhPhbIN9tNQtv';
 
@@ -36,7 +37,8 @@ export const deleteBook = createAsyncThunk('books/deleteBook', async (id, thunkA
 });
 
 const initialState = {
-  bookList,
+  books: [],
+  isLoading: false,
 };
 
 const bookSlice = createSlice({
@@ -44,46 +46,39 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      const { title, author } = action.payload;
+      const newBook = action.payload;
 
-      const newBook = {
-        item_id: `item${state.bookList.length + 1}`,
-        title,
-        author,
-      };
-      // eslint-disable-next-line no-param-reassign
-      state.bookList = [...state.bookList, newBook];
+      state.books = [...state.books, newBook];
     },
     removeBook: (state, action) => {
       const bookId = action.payload;
       return {
         ...state,
-        bookList: state.bookList.filter((book) => book.item_id !== bookId),
+        books: state.books.filter((book) => book.item_id !== bookId),
       };
     },
   },
   extraReducers: (builder) => {
     builder.addCase(postBook.pending, (state) => {
-      // eslint-disable-next-line no-param-reassign
       state.isLoading = true;
-    });
-    .addCase(postBook.fulfilled, (state) => {
-      state.isLoading = false;
     })
-    .addCase(postBook.rejected, (state) => {
-      state.isLoading = true;
-    });
+      .addCase(postBook.fulfilled, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(postBook.rejected, (state) => {
+        state.isLoading = true;
+      });
     builder.addCase(getBooks.pending, (state) => {
       state.isLoading = true;
     })
-      .addCase(getBooks.fulfilled, (state, action) =>{
+      .addCase(getBooks.fulfilled, (state, action) => {
         state.isLoading = false;
         const resData = action.payload;
-        const newBookArray = Object.keys(resData).map((id) =>{
-          state.isLoading = false;
-          const resData = action.payload;
-          const newBookArray = Object.keys(resData).map(id) =>
-        })
+        const newBookArray = Object.keys(resData).map((id) => {
+          const bookObj = resData[id][0];
+          bookObj.item_id = id;
+          return bookObj;
+        });
         state.books = newBookArray;
       })
       .addCase(getBooks.rejected, (state) => {
