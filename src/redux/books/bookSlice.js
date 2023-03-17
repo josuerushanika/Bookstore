@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -59,16 +58,20 @@ const bookSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(postBook.pending, (state) => {
-      state.isLoading = true;
+      const newState = { ...state };
+      newState.isLoading = true;
     })
       .addCase(postBook.fulfilled, (state) => {
-        state.isLoading = false;
+        const newState = { ...state };
+        newState.isLoading = false;
       })
       .addCase(postBook.rejected, (state) => {
-        state.isLoading = true;
+        const newState = { ...state };
+        newState.isLoading = true;
       });
     builder.addCase(getBooks.pending, (state) => {
-      state.isLoading = true;
+      const newState = { ...state };
+      newState.isLoading = true;
     })
       .addCase(getBooks.fulfilled, (state, action) => {
         state.isLoading = false;
