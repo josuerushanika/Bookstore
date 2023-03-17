@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 9.5rem;
+    background-color: white;
+  }
+  
+
+h1 {
+    color: #0290ff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.875rem;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
