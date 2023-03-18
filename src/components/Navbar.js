@@ -9,8 +9,8 @@ const Navbar = () => (
     <div className={styles.header}>
       <h1>BookStore CMS </h1>
       <nav className={styles.NavLinkContainer}>
-        <NavLink className={styles.NavLink} to="/">Books</NavLink>
-        <NavLink className={styles.NavLink} to="/categories">Categories</NavLink>
+        <NavLink className={styles.NavLinkB} to="/">BOOKS</NavLink>
+        <NavLink className={styles.NavLink} to="/categories">CATEGORIES</NavLink>
       </nav>
       <div className={styles.userIconContainer}>
         <FaUser className={styles.Mask} />

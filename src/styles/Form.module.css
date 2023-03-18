@@ -2,7 +2,6 @@
 .formmaincontainer {
   display: flex;
   justify-content: center;
-  background-color: #e8e8dc;
   width: 100%;
 }
 
@@ -45,7 +44,7 @@
 
 .categoryinput {
   width: 50%;
-  height: 6vh;
+  height: 7vh;
   padding: 0.375rem 0.938rem;
   border: 2px solid#e8e8e8;
   border-radius: 4px;
@@ -60,7 +59,7 @@
 
 .submitbtn {
   width: 10%;
-  height: 6vh;
+  height: 7vh;
   background-color: #0290ff;
   color: #fff;
   border: 2px solid#e8e8e8;
