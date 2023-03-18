@@ -1,0 +1,8 @@
+.categoriesbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  font-weight: bolder;
+  background-color: #379cf6;
+}

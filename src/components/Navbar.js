@@ -7,16 +7,15 @@ const Navbar = () => (
 
   <header>
     <div className={styles.header}>
-      <h1>BookStore  </h1>
-      <nav>
-        <NavLink to="/">Books</NavLink>
-        <NavLink to="/categories">Categories</NavLink>
+      <h1>BookStore CMS </h1>
+      <nav className={styles.NavLinkContainer}>
+        <NavLink className={styles.NavLink} to="/">Books</NavLink>
+        <NavLink className={styles.NavLink} to="/categories">Categories</NavLink>
       </nav>
+      <div className={styles.userIconContainer}>
+        <FaUser className={styles.Mask} />
+      </div>
     </div>
-
-    <button type="button">
-      <FaUser />
-    </button>
   </header>
 
 );
