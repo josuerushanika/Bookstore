@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getBooks } from '../redux/books/bookSlice';
+import styles from '../styles/Books.module.css';
+
 import Book from '../components/Book';
 import Form from '../components/Form';
 
@@ -28,7 +30,9 @@ const Books = () => {
 
   return (
     <div>
-      {output}
+      <div className={styles.booksWrapper}>
+        {output}
+      </div>
       <Form />
     </div>
   );
